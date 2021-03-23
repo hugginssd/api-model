@@ -64,9 +64,6 @@ C:\Users\Administrator\source\repos\ApiModel\bin\Debug\netcoreapp3.1\runtimes\wi
 C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\ApiModel.csprojAssemblyReference.cache
 C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\ApiModel.AssemblyInfoInputs.cache
 C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\ApiModel.AssemblyInfo.cs
-C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\ApiModel.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\ApiModel.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\ApiModel.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\ApiModel.RazorTargetAssemblyInfo.cache
 C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\ApiModel.csproj.CopyComplete
 C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\staticwebassets\ApiModel.StaticWebAssets.Manifest.cache
@@ -74,3 +71,10 @@ C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\staticwebas
 C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\ApiModel.dll
 C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\ApiModel.pdb
 C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\ApiModel.genruntimeconfig.cache
+C:\Users\Administrator\source\repos\ApiModel\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Administrator\source\repos\ApiModel\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Administrator\source\repos\ApiModel\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Administrator\source\repos\ApiModel\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\ApiModel.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\ApiModel.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\ApiModel.MvcApplicationPartsAssemblyInfo.cache

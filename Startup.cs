@@ -12,6 +12,7 @@ using ApiModel.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ApiModel.Options;
 
 namespace ApiModel
 {
@@ -34,6 +35,11 @@ namespace ApiModel
                 .AddEntityFrameworkStores<Data.DbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddSwaggerGen(x => 
+            {
+
+                x.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "API Model", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +53,16 @@ namespace ApiModel
             {
                app.UseHsts();
             }
+
+            var swaggerOptions = new SwaggerOptions();
+            Configuration.GetSection(nameof(SwaggerOptions)).Bind(swaggerOptions);
+
+            app.UseSwagger(option => { option.RouteTemplate = swaggerOptions.JsonRoute; });
+            app.UseSwaggerUI(option => 
+            {
+                option.SwaggerEndpoint(swaggerOptions.UIEndpoint, swaggerOptions.Description);
+            });
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
