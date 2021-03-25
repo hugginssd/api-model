@@ -7,6 +7,7 @@ namespace ApiModel.Contracts.V1.Requests
 {
     public class UpdatePostRequest
     {
-        public string Name { get; set; }    
+        public string Name { get; set; }  
+        
     }
 }

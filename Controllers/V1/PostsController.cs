@@ -46,6 +46,7 @@ namespace ApiModel.Controllers
             var updated = _postService.UpdatePost(post);
 
             if (updated)
+
                 return Ok(post);
 
 
