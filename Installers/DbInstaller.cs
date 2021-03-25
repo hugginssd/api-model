@@ -16,12 +16,12 @@ namespace ApiModel.Installs
 
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<Data.DbContext>(options =>
+            services.AddDbContext<Data.DataContext>(options =>
                options.UseSqlServer(
                    configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<Data.DbContext>();
-            services.AddSingleton<IPostService, PostService>();
+                .AddEntityFrameworkStores<Data.DataContext>();
+            services.AddScoped<IPostService, PostService>();
         }
     }
 }
