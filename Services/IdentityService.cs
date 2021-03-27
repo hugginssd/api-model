@@ -54,12 +54,12 @@ namespace ApiModel.Services
                     Errors = new[] { "User with this email address already exists" }
                 };
 
-            var newUser = new IdentityUser
+            var user = new IdentityUser
             {
                 Email = email,
                 UserName = email
             };
-            var createdUser = await _userManager.CreateAsync(newUser, password);
+            var createdUser = await _userManager.CreateAsync(user, password);
             if (!createdUser.Succeeded)
                 return new AuthenticationResult
                 {
@@ -72,10 +72,10 @@ namespace ApiModel.Services
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim(JwtRegisteredClaimNames.Sub, newUser.Email),
+                    new Claim(JwtRegisteredClaimNames.Sub, user.Email),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim(JwtRegisteredClaimNames.Email, newUser.Email),
-                    new Claim("id", newUser.Id)
+                    new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                    new Claim("id", user.Id)
                 }),
                 Expires = DateTime.UtcNow.AddHours(2),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
