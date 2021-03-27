@@ -81,7 +81,8 @@ C:\Users\Administrator\source\repos\ApiModel\bin\Debug\netcoreapp3.1\uk\Humanize
 C:\Users\Administrator\source\repos\ApiModel\bin\Debug\netcoreapp3.1\runtimes\win7-x64\native\Cosmos.CRTCompat.dll
 C:\Users\Administrator\source\repos\ApiModel\bin\Debug\netcoreapp3.1\runtimes\win7-x64\native\Microsoft.Azure.Documents.ServiceInterop.dll
 C:\Users\Administrator\source\repos\ApiModel\bin\Debug\netcoreapp3.1\Cosmonaut.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\ApiModel.csprojAssemblyReference.cache
 C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\ApiModel.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\ApiModel.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\ApiModel.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Administrator\source\repos\ApiModel\obj\Debug\netcoreapp3.1\ApiModel.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\ApiModel\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
