@@ -22,6 +22,28 @@ namespace ApiModel.Services
             _userManager = userManager;
             _jwtSetttings = jwtSetttings;
         }
+
+        public async Task<AuthenticationResult> LoginAsync(string email, string password)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+
+            if (user == null)
+                return new AuthenticationResult
+                {
+                    Errors = new[] { "User does not exist" }
+                };
+
+
+            var userHasValidPassword = await _userManager.CheckPasswordAsync(user, password);
+            if (!userHasValidPassword)
+                return new AuthenticationResult
+                {
+                    Errors = new[] { "User/password combination is wrong" }
+                };
+
+            return GenerateAuthenticationResultForUser(user);
+        }
+
         public async Task<AuthenticationResult> RegisterAsync(string email, string password)
         {
             var existingUser = await _userManager.FindByEmailAsync(email);
@@ -65,7 +87,32 @@ namespace ApiModel.Services
                 Success = true,
                 Token = tokenHandler.WriteToken(token)
             };
-            
+
+        }
+
+        private AuthenticationResult GenerateAuthenticationResultForUser(IdentityUser newUser)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_jwtSetttings.Secret);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new[]
+                {
+                    new Claim(JwtRegisteredClaimNames.Sub, newUser.Email),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    new Claim(JwtRegisteredClaimNames.Email, newUser.Email),
+                    new Claim("id", newUser.Id)
+                }),
+                Expires = DateTime.UtcNow.AddHours(2),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+
+            return new AuthenticationResult
+            {
+                Success = true,
+                Token = tokenHandler.WriteToken(token)
+            };
         }
     }
 }
