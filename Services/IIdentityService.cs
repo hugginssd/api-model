@@ -10,5 +10,6 @@ namespace ApiModel.Options
     {
         Task<AuthenticationResult> RegisterAsync(string Email, string Password);
         Task<AuthenticationResult> LoginAsync(string email, string password);
+        Task<AuthenticationResult> RefreshTokenAsync(string token, string refreshToken);
     }
 }
