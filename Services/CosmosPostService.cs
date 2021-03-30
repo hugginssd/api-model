@@ -30,11 +30,26 @@ namespace ApiModel.Services
             return response.IsSuccess;
         }
 
+        public Task<bool> CreateTagAsync(Tag newTag)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<bool> DeletePostAsync(Guid postId)
         {
             var response = await _cosmosStore.RemoveByIdAsync(postId.ToString(), postId.ToString());
             
             return response.IsSuccess;
+        }
+
+        public Task<bool> DeleteTagAync(string tagName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Tag>> GetAllTagsAsync()
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<Post> GetPostByIdAsync(Guid postId)
@@ -49,6 +64,11 @@ namespace ApiModel.Services
             var posts = await _cosmosStore.Query().ToListAsync();
 
             return posts.Select(x => new Post { Id = Guid.Parse(x.Id), Name = x.Name }).ToList();
+        }
+
+        public Task<Tag> GetTagByNameAsync(string tagName)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<bool> UpdatePostAsync(Post postToUpdate)

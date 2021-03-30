@@ -68,9 +68,34 @@ namespace ApiModel.Services
             return true;
         }
 
-        public Task<List<Tags>> GetAllTagsAsync()
+        public Task<List<Tag>> GetAllTagsAsync()
         {
             throw new NotImplementedException();
         }
+
+        public async Task<bool> CreateTagAsync(Tag newTag)
+        {
+            await _dataContext.Tags.AddAsync(newTag);
+            var created = await _dataContext.SaveChangesAsync();
+            return created > 0;
+        }
+
+        public async Task<bool> DeleteTagAync(string tagName)
+        {
+            var tag = await GetTagByNameAsync(tagName);
+            if (tag == null)
+                return false;
+
+            _dataContext.Tags.Remove(tag);
+
+            var deleted = await _dataContext.SaveChangesAsync();
+            return deleted > 0;
+        }   
+            
+        public async Task<Tag> GetTagByNameAsync(string tagName)
+        {
+            return await _dataContext.Tags.SingleOrDefaultAsync(x => x.Name == tagName);
+        }
+
     }
 }

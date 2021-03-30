@@ -18,6 +18,9 @@ namespace ApiModel.Services
 
         Task<bool> DeletePostAsync(Guid postId);
         Task<bool> UserOwnsPostAsync(Guid postId, string getUserId);
-        Task<List<Tags>> GetAllTagsAsync();
+        Task<List<Tag>> GetAllTagsAsync();
+        Task<bool> CreateTagAsync(Tag newTag);
+        Task<bool> DeleteTagAync(string tagName);
+        Task<Tag> GetTagByNameAsync(string tagName);
     }
 }

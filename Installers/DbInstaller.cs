@@ -20,6 +20,7 @@ namespace ApiModel.Installs
                options.UseSqlServer(
                    configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<Data.DataContext>();
             services.AddScoped<IPostService, PostService>();
             //services.AddSingleton<IPostService, CosmosPostService>();
