@@ -67,5 +67,10 @@ namespace ApiModel.Services
 
             return true;
         }
+
+        public Task<List<Tags>> GetAllTagsAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

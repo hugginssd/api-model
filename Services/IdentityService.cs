@@ -144,12 +144,23 @@ namespace ApiModel.Services
                     Errors = new[] { "User with this email address already exists" }
                 };
 
+
+
+
+            var newUserId = Guid.NewGuid();
             var user = new IdentityUser
             {
+                Id = newUserId.ToString(),
                 Email = email,
                 UserName = email
             };
+
             var createdUser = await _userManager.CreateAsync(user, password);
+
+
+            await _userManager.AddClaimAsync(user, new Claim("tags.view", "true"));
+
+
             if (!createdUser.Succeeded)
                 return new AuthenticationResult
                 {
@@ -158,15 +169,22 @@ namespace ApiModel.Services
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_jwtSetttings.Secret);
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(new[]
+
+            var claims = new List<Claim>
                 {
                     new Claim(JwtRegisteredClaimNames.Sub, user.Email),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                     new Claim(JwtRegisteredClaimNames.Email, user.Email),
                     new Claim("id", user.Id)
-                }),
+                };
+
+
+            var userClaims = await _userManager.GetClaimsAsync(user);
+            claims.AddRange(userClaims);
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.UtcNow.Add(_jwtSetttings.TokenLifeTime),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
