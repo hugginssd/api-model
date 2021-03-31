@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5xjt7Kjn5iACOSioPX5y3qWeabJyDzEfffF6vf3coURphqf3jkLQ/0X93hhelCaa4FkPMIcRbcbS1/3BRcERTA==",
+  "dgSpecHash": "niOYYINTWi93N1G4v26Pu1vb7N749MsgUzAWynvcQ9HxxPznyWK4App0FZdgsyQ80vu1sWle+zLn6nsBcUhiCw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\source\\repos\\ApiModel\\ApiModel.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,9 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\cosmonaut\\2.11.3\\cosmonaut.2.11.3.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\cosmonaut.extensions.microsoft.dependencyinjection\\2.3.0\\cosmonaut.extensions.microsoft.dependencyinjection.2.3.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\fluentvalidation\\9.5.3\\fluentvalidation.9.5.3.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.5.3\\fluentvalidation.aspnetcore.9.5.3.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\9.5.3\\fluentvalidation.dependencyinjectionextensions.9.5.3.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\humanizer.core.uk\\2.5.16\\humanizer.core.uk.2.5.16.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
@@ -32,6 +35,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.relational.design\\1.1.6\\microsoft.entityframeworkcore.relational.design.1.1.6.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.4\\microsoft.entityframeworkcore.sqlserver.5.0.4.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver.design\\1.1.6\\microsoft.entityframeworkcore.sqlserver.design.1.1.6.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.4\\microsoft.entityframeworkcore.tools.5.0.4.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
