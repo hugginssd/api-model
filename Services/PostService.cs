@@ -18,7 +18,7 @@ namespace ApiModel.Services
             _dataContext = dataContext;
         }
 
-        public async Task<bool> DeletePostAsync(Guid postId)    
+        public async Task<bool> DeletePostAsync(Guid postId)
         {
             var post = await GetPostByIdAsync(postId);
             if (post == null)
@@ -30,32 +30,27 @@ namespace ApiModel.Services
             return deleted > 0;
         }
 
-        public async Task<Post> GetPostByIdAsync(Guid postId)   
+        public async Task<Post> GetPostByIdAsync(Guid postId)
         {
             return await _dataContext.Posts.SingleOrDefaultAsync(x => x.Id == postId);
         }
 
-        public async Task<List<Post>> GetPostsAsync()   
+        public async Task<List<Post>> GetPostsAsync()
         {
             return await _dataContext.Posts.ToListAsync();
         }
-
-
-        public async Task<bool> CreatePostAsync(Post post)  
+        public async Task<bool> CreatePostAsync(Post post)
         {
             await _dataContext.Posts.AddAsync(post);
             var created = await _dataContext.SaveChangesAsync();
             return created > 0;
         }
-
-
-        public async  Task<bool> UpdatePostAsync(Post postToUpdate) 
+        public async Task<bool> UpdatePostAsync(Post postToUpdate)
         {
             _dataContext.Posts.Update(postToUpdate);
             var updated = await _dataContext.SaveChangesAsync();
-            return updated>0;
+            return updated > 0;
         }
-
         public async Task<bool> UserOwnsPostAsync(Guid postId, string userId)
         {
             var post = await _dataContext.Posts.AsNoTracking().SingleOrDefaultAsync(x => x.Id == postId);
@@ -67,7 +62,6 @@ namespace ApiModel.Services
 
             return true;
         }
-
         public Task<List<Tag>> GetAllTagsAsync()
         {
             throw new NotImplementedException();
@@ -90,12 +84,23 @@ namespace ApiModel.Services
 
             var deleted = await _dataContext.SaveChangesAsync();
             return deleted > 0;
-        }   
-            
+        }
+
         public async Task<Tag> GetTagByNameAsync(string tagName)
         {
             return await _dataContext.Tags.SingleOrDefaultAsync(x => x.Name == tagName);
         }
 
+        public async Task<bool> UpdateTagsAsync(Tag tagToUpdate)
+        {
+            _dataContext.Tags.Update(tagToUpdate);
+            var updated = await _dataContext.SaveChangesAsync();
+            return updated > 0;
+        }
+
+        public async Task<Tag> GetTagByIdAsync(Guid tagId)
+        {
+            return await _dataContext.Tags.SingleOrDefaultAsync(x => x.Id == tagId);
+        }
     }
 }

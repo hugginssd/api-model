@@ -66,6 +66,11 @@ namespace ApiModel.Services
             return posts.Select(x => new Post { Id = Guid.Parse(x.Id), Name = x.Name }).ToList();
         }
 
+        public Task<Tag> GetTagByIdAsync(Guid tagId)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<Tag> GetTagByNameAsync(string tagName)
         {
             throw new NotImplementedException();
@@ -81,6 +86,11 @@ namespace ApiModel.Services
 
             var response = await _cosmosStore.UpdateAsync(cosmosPost);
             return response.IsSuccess;
+        }
+
+        public Task<bool> UpdateTagsAsync(Tag tagToUpdate)
+        {
+            throw new NotImplementedException();
         }
 
         public Task<bool> UserOwnsPostAsync(Guid postId, string getUserId)

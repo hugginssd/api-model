@@ -58,6 +58,7 @@ namespace ApiModel.Controllers.V1
 
         [HttpDelete(ApiRoutes.Tags.Delete)]
         [Authorize(Roles ="Admin")]
+        [Authorize(Policy = "MustWorkForChapsas")]
         public async Task<IActionResult> Delete([FromRoute] string tagName)
         {
             var deleted = await _postService.DeleteTagAync(tagName);
@@ -81,5 +82,25 @@ namespace ApiModel.Controllers.V1
             return Ok(tag);
         }
 
+        [HttpPut(ApiRoutes.Tags.Update)]    
+        public async Task<IActionResult> Update([FromRoute] Guid tagId, [FromBody] UpdateTagsRequest request)
+        {   
+            var userOwnsTags = await _postService.UserOwnsPostAsync(tagId, HttpContext.GetUserId());   
+
+            if (!userOwnsTags)
+                return BadRequest(new { error = "You do not own this tag" });
+
+            var tags = await _postService.GetTagByIdAsync(tagId);
+            tags.Name = request.Name;
+
+            var updated = await _postService.UpdateTagsAsync(tags);
+
+            if (updated)
+
+                return Ok(tags);
+
+
+            return NotFound();
+        }
     }
 }

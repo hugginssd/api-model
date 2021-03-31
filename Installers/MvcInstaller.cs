@@ -1,6 +1,8 @@
-﻿using ApiModel.Options;
+﻿using ApiModel.Authorization;
+using ApiModel.Options;
 using ApiModel.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -58,6 +60,16 @@ namespace ApiModel.Installs
             {
                 options.AddPolicy("TagViewer", builder => builder.RequireClaim("tags.view", "true"));
             });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("MustWorkForChapsas", policy =>
+                {
+                    policy.AddRequirements(new WorksForCompanyRequirement("chapsas.com"));
+                });
+            });
+
+            services.AddSingleton<IAuthorizationHandler, WorksForCompanyHandler>();
 
             services.AddSwaggerGen(x =>
             {
