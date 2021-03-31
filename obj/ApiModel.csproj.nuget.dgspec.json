@@ -48,6 +48,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
             "Cosmonaut": {
               "target": "Package",
               "version": "[2.11.3, )"
@@ -55,6 +63,10 @@
             "Cosmonaut.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[2.3.0, )"
+            },
+            "Humanizer.Core": {
+              "target": "Package",
+              "version": "[2.8.26, )"
             },
             "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",
@@ -80,6 +92,12 @@
               "target": "Package",
               "version": "[5.0.4, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[5.0.4, )"
@@ -88,9 +106,9 @@
               "target": "Package",
               "version": "[5.0.4, )"
             },
-            "Microsoft.EntityFrameworkCore.Tools": {
+            "Microsoft.EntityFrameworkCore.SqlServer.Design": {
               "target": "Package",
-              "version": "[3.1.8, )"
+              "version": "[1.1.6, )"
             },
             "Microsoft.OpenApi": {
               "target": "Package",

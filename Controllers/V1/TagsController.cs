@@ -1,8 +1,10 @@
 ﻿using ApiModel.Contracts;
 using ApiModel.Contracts.V1.Requests;
+using ApiModel.Contracts.V1.Response;
 using ApiModel.Domain;
 using ApiModel.Extensions;
 using ApiModel.Services;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -17,16 +19,21 @@ namespace ApiModel.Controllers.V1
     public class TagsController : Controller
     {
         private readonly IPostService _postService;
-        public TagsController(IPostService postService)
+        private readonly IMapper _mapper;
+
+        public TagsController(IPostService postService, IMapper mapper)
         {
             _postService = postService;
+            _mapper = mapper;
         }
 
         [HttpGet(ApiRoutes.Tags.GetAll)]
-        [Authorize(Policy = "TagViewer")]
+        //[Authorize(Policy = "TagViewer")]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(await _postService.GetAllTagsAsync());
+
+            var tags = await _postService.GetAllTagsAsync();
+            return Ok(_mapper.Map<List<TagResponse>>(tags));
         }
 
         public IActionResult Ping()
@@ -53,7 +60,7 @@ namespace ApiModel.Controllers.V1
 
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
             var locationUri = baseUrl + "/" + ApiRoutes.Tags.Get.Replace("{tagName}", newTag.Name);
-            return Created(locationUri, newTag);
+            return Created(locationUri, _mapper.Map<List<TagResponse>>(newTag));
         }
 
         [HttpDelete(ApiRoutes.Tags.Delete)]
@@ -79,7 +86,7 @@ namespace ApiModel.Controllers.V1
                 return NotFound();
             }
 
-            return Ok(tag);
+            return Ok(_mapper.Map<List<TagResponse>>(tag));
         }
 
         [HttpPut(ApiRoutes.Tags.Update)]    

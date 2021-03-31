@@ -16,5 +16,6 @@ namespace ApiModel.Domain
         public string UserId { get; set; }
         [ForeignKey(nameof(UserId))]
         public IdentityUser User { get; set; }
+        public virtual List<PostTag> Tags { get; set; } 
     }
 }
