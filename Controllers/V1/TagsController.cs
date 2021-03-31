@@ -16,6 +16,8 @@ using System.Threading.Tasks;
 namespace ApiModel.Controllers.V1
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin,Poster")]
+    [Produces("application/json")]
+    
     public class TagsController : Controller
     {
         private readonly IPostService _postService;
@@ -27,6 +29,10 @@ namespace ApiModel.Controllers.V1
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Returns all the tags in the system
+        /// </summary>
+        /// <response code="200">Returns all the tags in the system</response>
         [HttpGet(ApiRoutes.Tags.GetAll)]
         //[Authorize(Policy = "TagViewer")]
         public async Task<IActionResult> GetAll()
@@ -41,7 +47,14 @@ namespace ApiModel.Controllers.V1
             return Ok("pong");
         }
 
+        /// <summary>
+        ///  Creates a tag in the system
+        /// </summary>
+        /// <response code="200">Creates a tag in the system</response>
+        /// <response code="400">Unable to create the tag due to validation error</response>
         [HttpPost(ApiRoutes.Tags.Create)]
+        [ProducesResponseType(typeof(TagResponse), 201)]
+        [ProducesResponseType(typeof(ErrorResponse), 400)]
         public async Task<IActionResult> Create([FromBody] CreateTagRequest request)
         {
             var newTag = new Tag
