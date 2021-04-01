@@ -29,7 +29,7 @@ namespace ApiModel.Controllers
             _mapper = mapper;
         }
         [HttpGet(ApiRoutes.Posts.GetAll)]
-        [Cached(600)]
+        //[Cached(600)]
         public async Task<IActionResult> GetAll()
         {
             var posts = await _postService.GetPostsAsync();
@@ -49,7 +49,7 @@ namespace ApiModel.Controllers
 
 
         [HttpGet(ApiRoutes.Posts.Get)]
-        [Cached(600)]
+        //[Cached(600)]
         public async Task<IActionResult> Get([FromRoute]Guid postId)  
         {
             var post = await _postService.GetPostByIdAsync(postId);
