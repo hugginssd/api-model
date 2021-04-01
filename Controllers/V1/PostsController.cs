@@ -1,4 +1,5 @@
-﻿using ApiModel.Contracts;
+﻿using ApiModel.Cache;
+using ApiModel.Contracts;
 using ApiModel.Contracts.V1.Requests;
 using ApiModel.Contracts.V1.Response;
 using ApiModel.Domain;
@@ -28,6 +29,7 @@ namespace ApiModel.Controllers
             _mapper = mapper;
         }
         [HttpGet(ApiRoutes.Posts.GetAll)]
+        [Cached(600)]
         public async Task<IActionResult> GetAll()
         {
             var posts = await _postService.GetPostsAsync();
@@ -46,7 +48,8 @@ namespace ApiModel.Controllers
     //        }).ToList()
 
 
-[HttpGet(ApiRoutes.Posts.Get)]
+        [HttpGet(ApiRoutes.Posts.Get)]
+        [Cached(600)]
         public async Task<IActionResult> Get([FromRoute]Guid postId)  
         {
             var post = await _postService.GetPostByIdAsync(postId);
