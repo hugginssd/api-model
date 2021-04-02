@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiModel.Sdk.Sample", "..\A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiModel.Contracts", "..\ApiModel.Contracts\ApiModel.Contracts.csproj", "{1ED45A35-BA36-46A1-B633-EDBEEC4316EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiModel.Web", "..\ApiModel.Web\ApiModel.Web.csproj", "{32144263-61CE-401B-9351-617BD6745AC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1ED45A35-BA36-46A1-B633-EDBEEC4316EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1ED45A35-BA36-46A1-B633-EDBEEC4316EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1ED45A35-BA36-46A1-B633-EDBEEC4316EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32144263-61CE-401B-9351-617BD6745AC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32144263-61CE-401B-9351-617BD6745AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32144263-61CE-401B-9351-617BD6745AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32144263-61CE-401B-9351-617BD6745AC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
