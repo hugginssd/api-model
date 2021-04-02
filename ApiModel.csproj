@@ -50,6 +50,11 @@
 	
 
   <ItemGroup>
+    <None Include="ApiModel.Contracts\ApiModel.Contracts.csproj" />
+  </ItemGroup>
+	
+
+  <ItemGroup>
     <ProjectReference Include="..\ApiModel.Sdk.Sample\ApiModel.Sdk.Sample.csproj" />
     <ProjectReference Include="..\ApiModel.Sdk\ApiModel.Sdk.csproj" />
   </ItemGroup>
