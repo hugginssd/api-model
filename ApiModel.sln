@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiModel", "ApiModel.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiModel.Sdk", "..\ApiModel.Sdk\ApiModel.Sdk.csproj", "{AB5987D7-4D04-4995-A5B0-9FDC670519A9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiModel.Sdk.Sample", "..\ApiModel.Sdk.Sample\ApiModel.Sdk.Sample.csproj", "{F22C929E-B045-4D91-BF52-A5242F4D3DC3}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiModel.Contracts", "..\ApiModel.Contracts\ApiModel.Contracts.csproj", "{1ED45A35-BA36-46A1-B633-EDBEEC4316EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiModel.Web", "..\ApiModel.Web\ApiModel.Web.csproj", "{32144263-61CE-401B-9351-617BD6745AC8}"
@@ -27,10 +25,6 @@ Global
 		{AB5987D7-4D04-4995-A5B0-9FDC670519A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB5987D7-4D04-4995-A5B0-9FDC670519A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB5987D7-4D04-4995-A5B0-9FDC670519A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F22C929E-B045-4D91-BF52-A5242F4D3DC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F22C929E-B045-4D91-BF52-A5242F4D3DC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F22C929E-B045-4D91-BF52-A5242F4D3DC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F22C929E-B045-4D91-BF52-A5242F4D3DC3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1ED45A35-BA36-46A1-B633-EDBEEC4316EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1ED45A35-BA36-46A1-B633-EDBEEC4316EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1ED45A35-BA36-46A1-B633-EDBEEC4316EF}.Release|Any CPU.ActiveCfg = Release|Any CPU

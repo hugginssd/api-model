@@ -23,7 +23,7 @@ namespace ApiModel.Services
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<FacebookTokenValidationResult> GetUserInfoAsync(string accessToken)
+        public async Task<FacebookUserInfoResult> GetUserInfoAsync(string accessToken)
         {
             var formattedUrl = string.Format(TokenValidationUrl, accessToken, _facebookAuthSettings.AppId,
                 _facebookAuthSettings.AppSecret);
@@ -32,11 +32,11 @@ namespace ApiModel.Services
             result.EnsureSuccessStatusCode();
 
             var responseAsString = await result.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<FacebookTokenValidationResult>(responseAsString);
+            return JsonConvert.DeserializeObject<FacebookUserInfoResult>(responseAsString);
 
         }
 
-        public async Task<FacebookUserInfoResult> ValidateAccessTokenAsync(string accessToken)
+        public async Task<FacebookTokenValidationResult> ValidateAccessTokenAsync(string accessToken)
         {
             var formattedUrl = string.Format(UserInfoUrl, accessToken, _facebookAuthSettings.AppId,
                _facebookAuthSettings.AppSecret);
@@ -45,7 +45,13 @@ namespace ApiModel.Services
             result.EnsureSuccessStatusCode();
 
             var responseAsString = await result.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<FacebookUserInfoResult>(responseAsString);
+            return JsonConvert.DeserializeObject<FacebookTokenValidationResult>(responseAsString);
         }
+
+        Task<FacebookUserInfoResult> IFacebookAuthService.GetUserInfoAsync(string accessToken)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
