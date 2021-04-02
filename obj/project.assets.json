@@ -1246,6 +1246,22 @@
           "lib/netcoreapp3.0/Pipelines.Sockets.Unofficial.dll": {}
         }
       },
+      "Refit/6.0.38": {
+        "type": "package",
+        "dependencies": {
+          "System.Net.Http.Json": "5.0.0"
+        },
+        "compile": {
+          "lib/net5.0/Refit.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Refit.dll": {}
+        },
+        "build": {
+          "buildTransitive/netstandard2.0/refit.props": {},
+          "buildTransitive/netstandard2.0/refit.targets": {}
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
         "type": "package",
         "runtimeTargets": {
@@ -2149,6 +2165,15 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "System.Net.Http.Json/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/System.Net.Http.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/System.Net.Http.Json.dll": {}
         }
       },
       "System.Net.NameResolution/4.3.0": {
@@ -3264,6 +3289,43 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
+        }
+      },
+      "ApiModel.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/ApiModel.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ApiModel.Contracts.dll": {}
+        }
+      },
+      "ApiModel.Sdk/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "ApiModel.Contracts": "1.0.0",
+          "Refit": "6.0.38"
+        },
+        "compile": {
+          "bin/placeholder/ApiModel.Sdk.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ApiModel.Sdk.dll": {}
+        }
+      },
+      "ApiModel.Sdk.Sample/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "ApiModel.Sdk": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ApiModel.Sdk.Sample.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ApiModel.Sdk.Sample.dll": {}
         }
       }
     }
@@ -5025,6 +5087,30 @@
         "lib/netstandard2.0/Pipelines.Sockets.Unofficial.xml",
         "pipelines.sockets.unofficial.2.0.17.nupkg.sha512",
         "pipelines.sockets.unofficial.nuspec"
+      ]
+    },
+    "Refit/6.0.38": {
+      "sha512": "1wKjkHYDUp6TrQ0fK6w6CXguJ+kkGYj2IpPMfzyLQM+uinDYzYqWQ0kcsGxmTWGuWM4rYbUZN7IYFtSDD4x0Yw==",
+      "type": "package",
+      "path": "refit/6.0.38",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/cs/InterfaceStubGenerator.Core.dll",
+        "build/netstandard2.0/refit.targets",
+        "buildTransitive/netstandard2.0/refit.props",
+        "buildTransitive/netstandard2.0/refit.targets",
+        "lib/net461/Refit.dll",
+        "lib/net461/Refit.xml",
+        "lib/net5.0/Refit.dll",
+        "lib/net5.0/Refit.xml",
+        "lib/netstandard2.0/Refit.dll",
+        "lib/netstandard2.0/Refit.xml",
+        "lib/netstandard2.1/Refit.dll",
+        "lib/netstandard2.1/Refit.xml",
+        "refit.6.0.38.nupkg.sha512",
+        "refit.nuspec",
+        "refit_logo.png"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
@@ -7188,6 +7274,28 @@
         "runtimes/win/lib/netstandard1.3/System.Net.Http.dll",
         "system.net.http.4.3.4.nupkg.sha512",
         "system.net.http.nuspec"
+      ]
+    },
+    "System.Net.Http.Json/5.0.0": {
+      "sha512": "3CPSQpCzEmI9o+1G79TnPCjF40omCdnoXj2Rg76BDwGj5+LZnFPjV+t35eedlvl+uthmholk/XXxXTYgJWSexw==",
+      "type": "package",
+      "path": "system.net.http.json/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Net.Http.Json.dll",
+        "lib/net461/System.Net.Http.Json.xml",
+        "lib/net5.0/System.Net.Http.Json.dll",
+        "lib/net5.0/System.Net.Http.Json.xml",
+        "lib/netstandard2.0/System.Net.Http.Json.dll",
+        "lib/netstandard2.0/System.Net.Http.Json.xml",
+        "system.net.http.json.5.0.0.nupkg.sha512",
+        "system.net.http.json.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Net.NameResolution/4.3.0": {
@@ -10211,10 +10319,27 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "ApiModel.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../ApiModel.Contracts/ApiModel.Contracts.csproj",
+      "msbuildProject": "../ApiModel.Contracts/ApiModel.Contracts.csproj"
+    },
+    "ApiModel.Sdk/1.0.0": {
+      "type": "project",
+      "path": "../ApiModel.Sdk/ApiModel.Sdk.csproj",
+      "msbuildProject": "../ApiModel.Sdk/ApiModel.Sdk.csproj"
+    },
+    "ApiModel.Sdk.Sample/1.0.0": {
+      "type": "project",
+      "path": "../ApiModel.Sdk.Sample/ApiModel.Sdk.Sample.csproj",
+      "msbuildProject": "../ApiModel.Sdk.Sample/ApiModel.Sdk.Sample.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "ApiModel.Sdk >= 1.0.0",
+      "ApiModel.Sdk.Sample >= 1.0.0",
       "AutoMapper >= 10.1.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.1",
       "Cosmonaut >= 2.11.3",
@@ -10275,7 +10400,14 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Administrator\\source\\repos\\ApiModel.Sdk.Sample\\ApiModel.Sdk.Sample.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\source\\repos\\ApiModel.Sdk.Sample\\ApiModel.Sdk.Sample.csproj"
+            },
+            "C:\\Users\\Administrator\\source\\repos\\ApiModel.Sdk\\ApiModel.Sdk.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\source\\repos\\ApiModel.Sdk\\ApiModel.Sdk.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

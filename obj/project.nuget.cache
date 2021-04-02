@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SmpQDy0zEZyFhWB9Q/wDJ7zUd/NfOPxpCwVok3YUFGzb/7RQl2yI9MfKlm8nqZbS21dMtrPNqDxVItiTBr0leQ==",
+  "dgSpecHash": "8PNWO29bEhB2pBHK41Ptsn8uo3MHjZulP+1fKqJk+yWL2ymZp/F7HlX4Pggxh4PWhgdpAxUTcjVKbc8DOymJCg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\source\\repos\\ApiModel\\ApiModel.csproj",
   "expectedPackageFiles": [
@@ -88,6 +88,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\njsonschema\\10.3.11\\njsonschema.10.3.11.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\nswag.core\\13.10.8\\nswag.core.13.10.8.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\pipelines.sockets.unofficial\\2.0.17\\pipelines.sockets.unofficial.2.0.17.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\refit\\6.0.38\\refit.6.0.38.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
@@ -149,6 +150,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.linq.queryable\\4.0.1\\system.linq.queryable.4.0.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.net.http\\4.3.4\\system.net.http.4.3.4.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.net.nameresolution\\4.3.0\\system.net.nameresolution.4.3.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.net.networkinformation\\4.1.0\\system.net.networkinformation.4.1.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.net.primitives\\4.3.0\\system.net.primitives.4.3.0.nupkg.sha512",

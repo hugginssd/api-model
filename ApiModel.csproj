@@ -47,5 +47,11 @@
   <ItemGroup>
     <Folder Include="Contracts\" />
   </ItemGroup>
+	
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApiModel.Sdk.Sample\ApiModel.Sdk.Sample.csproj" />
+    <ProjectReference Include="..\ApiModel.Sdk\ApiModel.Sdk.csproj" />
+  </ItemGroup>
 
 </Project>
