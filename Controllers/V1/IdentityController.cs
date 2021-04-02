@@ -82,5 +82,25 @@ namespace ApiModel.Controllers.V1
 
         }
 
+
+        [HttpPost(ApiRoutes.Identity.FacebookAuth)] 
+        public async Task<IActionResult> FacebookAuth([FromBody] UserFacebookAuthRequest request)
+        { 
+            var authResponse = await _identityService.LoginWithFacebookAsync(request.AccessToken);
+
+            if (!authResponse.Success)
+                return BadRequest(new AuthFailedResponse
+                {
+                    Errors = authResponse.Errors
+                });
+
+            return Ok(new AuthSuccessResponse
+            {
+                Token = authResponse.Token,
+                RefreshToken = authResponse.RefreshToken
+            });
+
+        }
+
     }
 }
